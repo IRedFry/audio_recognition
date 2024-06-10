@@ -1,13 +1,973 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --yellow: #ffff62;
+  --black: #000000;
+  --gray: #191919;
+  --light-gray: #6f6f6f;
+  --middle-gray: #282828;
 }
 
+body {
+  margin: 0px;
+  padding: 0px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Programme", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh !important;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* NavBar */
+
+header {
+  background-color: var(--gray);
+  max-height: 15vh;
+  height: auto !important;
+}
+
+.brandName {
+  color: var(--yellow);
+  font-style: italic;
+  font-size: xx-large;
+  font-family: "Programme";
+  background-color: var(--gray);
+}
+
+.ant-layout-header {
+  font-size: 20pt;
+  background-color: var(--gray);
+}
+
+.ant-menu {
+  background-color: var(--gray);
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 10%;
+}
+
+.ant-divider {
+  background-color: var(--yellow);
+  font-size: xx-large;
+  font-weight: bolder;
+  width: 3%;
+}
+.ant-menu-item {
+  font-family: "Programme";
+  background-color: var(--gray);
+  font-weight: bold;
+  text-align: center;
+  font-size: large;
+  border-radius: 30px !important;
+}
+
+.ant-menu-title-content {
+  color: var(--yellow);
+  padding: 0 50px;
+}
+
+.ant-menu-item-selected {
+  background-color: var(--yellow) !important;
+}
+
+.ant-menu-item-selected .ant-menu-title-content {
+  color: var(--black);
+}
+
+.site-layout {
+  min-height: 95vh;
+  overflow: hidden;
+  color: white;
+  background-color: var(--gray);
+}
+
+/* Landing Page */
+
+.searchBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchTitle {
+  font-family: "Programme";
+  font-size: xx-large;
+  text-align: left;
+  padding-bottom: 5px;
+  max-width: 40vw;
+  min-width: 40vw;
+  border-bottom: 1px solid white;
+}
+
+.landingMain {
+  min-height: 95vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searchBarWrapper {
+  width: 45vw;
+  padding: 15px;
+  display: flex;
+  border: 2px solid var(--light-gray);
+  justify-content: center;
+  border-radius: 35px;
+}
+
+.searchBar {
+  font-family: "Programme";
+  font-size: large;
+  width: 100%;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: var(--gray);
+}
+
+.searchBar:focus {
+  outline: none;
+}
+
+.searchButton {
+  background-color: var(--yellow);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.searchButtonLogo {
+  padding: 5px;
+  width: 28px;
+  height: 30px;
+  background-color: transparent;
+}
+
+.bigLogo {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bigLogo .brandName {
+  font-size: 75pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.bigLogo img {
+  width: 128px;
+  height: 128px;
+}
+
+.brandTitle {
+  color: var(--yellow);
+  font-family: "Programme";
+  font-size: x-large;
+  margin-top: 0px;
+}
+
+/* Songs Page */
+
+.songPage {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.songList {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 30vw);
+  padding-top: 3%;
+  padding-left: 15%;
+}
+
+.songItem {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.songItem:hover .songInfo {
+  color: var(--yellow);
+}
+
+.songItem:nth-of-type(odd):last-of-type {
+  width: 100%;
+}
+
+.songCover {
+  width: 128px;
+  height: 128px;
+  margin: 10px;
+}
+
+.songInfo {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Programme";
+}
+
+.songTitle {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.songArtist {
+  font-size: larger;
+}
+
+/* Artist Page */
+
+.artistPage {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+}
+
+.artistList {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 30vw);
+  padding-top: 3%;
+  padding-left: 15%;
+}
+
+.artistItem {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.artistItem:hover .artistInfo {
+  color: var(--yellow);
+}
+
+.artistItem:nth-of-type(odd):last-of-type {
+  width: 100%;
+}
+
+.artistCover {
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  margin: 10px;
+}
+
+.artistInfo {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Programme";
+}
+
+.artistName {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+/* Album Page */
+
+.albumPage {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.albumList {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 3%;
+  padding-left: 10%;
+  flex-wrap: wrap;
+}
+
+.albumItem {
+  display: flex;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.albumItem:hover .albumInfo {
+  color: var(--yellow);
+}
+
+.albumItem:nth-of-type(odd):last-of-type {
+  width: 100%;
+}
+
+.albumCover {
+  width: 128px;
+  height: 128px;
+  margin: 10px;
+}
+
+.albumInfo {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "Programme";
+}
+
+.albumName {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.albumArtist {
+  font-size: larger;
+}
+
+/* Single Song Page */
+
+.singleSongPage {
+  font-family: "Programme";
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleSongUpper {
+  display: flex;
+}
+
+.singleSongCover {
+  margin: 30px;
+  width: 400px;
+  height: 400px;
+}
+
+.singleSongInfo {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid var(--light-gray);
+  width: 100vh;
+
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+.sigleSongTitle {
+  font-size: 60pt;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  margin-left: -5px;
+}
+
+.onPageTitleEdit .ant-form-item-control-input-content,
+.onPageTitleEdit .ant-input {
+  font-size: 60pt;
+  font-family: "Programme";
+  color: var(--yellow);
+
+  border: none;
+  font-weight: 700;
+
+  margin-top: 29px;
+  margin-bottom: -25px;
+  margin-left: -3px !important;
+  padding-left: 0px;
+  margin-left: -5px;
+  padding-bottom: 0px;
+}
+
+.onPageDescriptionEdit .ant-form-item-control-input-content,
+.onPageDescriptionEdit .ant-input {
+  font-size: large;
+  font-family: "Programme";
+  color: var(--yellow);
+
+  border: none;
+
+  margin-left: -3px !important;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.onPageDescriptionEdit .ant-input {
+  background-color: transparent;
+  padding: 0px 0px 0px 10px;
+  text-decoration: underline;
+}
+
+.onPageTitleEdit .ant-input {
+  background-color: var(--gray);
+  border-color: var(--yellow) !important;
+  border-width: 1px;
+  border-style: solid;
+
+  border-radius: 20px;
+  padding: 0px 0px 0px 10px;
+}
+
+.sigleSongArtist {
+  font-size: 35pt;
+  font-weight: 100;
+}
+
+.artistPublisDate {
+  margin-top: 100px;
+}
+.artistPublisDate .ant-form-item,
+.artistPublisDate .ant-picker-input-item,
+.artistPublisDate .ant-picker,
+.artistPublisDate input {
+  font-size: 25pt !important;
+
+}
+
+.onPageArtistEdit .ant-select-selector,
+.onPageArtistEdit .ant-select-selection-search,
+.onPageArtistEdit .ant-form-item-control-input,
+.onPageArtistEdit .ant-select-selection-item .onPageArtistEdit .ant-select {
+  font-size: 35pt;
+  font-family: "Programme";
+  color: white !important;
+
+  border: none;
+  font-weight: 100 !important;
+
+  margin-top: 29px;
+  margin-bottom: -25px;
+  margin-left: -3px !important;
+  padding-left: 0px;
+  margin-left: -5px;
+  padding-bottom: 0px;
+
+  min-height: 80px !important;
+}
+
+.onPageArtistEdit .ant-select-selection-item {
+  font-weight: 100 !important;
+  line-height: 70px !important;
+}
+
+.onPageGenreEdit .ant-select-selector,
+.onPageGenreEdit .ant-select-selection-search,
+.onPageGenreEdit .ant-form-item-control-input,
+.onPageGenreEdit
+  .ant-select-selection-item
+  .onPageGenreEdit
+  .ant-select
+  .onPageGenreEdit
+  .ant-form-item {
+  font-size: 20pt;
+  font-family: "Programme";
+  color: white !important;
+
+  border: none;
+
+  margin-bottom: -20px !important;
+  padding-bottom: 0px !important;
+
+  min-height: 38px;
+}
+
+.onPageGenreEdit .ant-select-selection-item {
+  line-height: 30px !important;
+}
+
+.ant-picker .ant-picker-input-placeholder > input {
+  color: var(--yellow);
+}
+
+.singleSongDateEdit .ant-form-item,
+.singleSongDateEdit .ant-picker-input-item,
+.singleSongDateEdit .ant-picker,
+.singleSongDateEdit input {
+  font-size: 15pt !important;
+}
+
+.ant-picker-cell-in-view {
+  background-color: var(--middle-gray) !important;
+  border: 1px solid var(--yellow);
+}
+
+.singleSongLower {
+  display: flex;
+  min-height: 580px;
+}
+
+.singleSongAlbumPart {
+  padding: 30px;
+  margin: 30px;
+  width: 400px;
+  background-color: var(--middle-gray);
+  border-radius: 25px;
+}
+
+.singleSongAlbumCover {
+  width: 300px;
+  height: 300px;
+}
+
+.singleSongAbout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--middle-gray);
+  width: 100vh;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 25px;
+}
+
+.singleSongAboutLine {
+  font-size: x-large;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-gray);
+}
+.singleSongAboutLine div:first-child {
+  color: var(--light-gray);
+  align-items: left;
+}
+
+/* Single Artist Page */
+
+.singleArtistPage {
+  font-family: "Programme";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleArtistUpper {
+  display: flex;
+}
+
+.singleArtistCover {
+  margin: 30px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.singleArtistInfo {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid var(--light-gray);
+  width: 100vh;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+
+.singleArtistTitle {
+  font-size: 70pt;
+}
+
+.singleArtistBlock {
+  background-color: var(--middle-gray);
+  margin: 30px;
+  width: 80%;
+  border-radius: 25px;
+  font-size: large;
+}
+
+.singleArtistDescription {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 30px;
+}
+
+.artistSongsWrapper {
+  margin-top: 25px;
+  width: 80%;
+
+  border-radius: 25px;
+  background-color: var(--middle-gray);
+}
+
+.artistSongGradient {
+  position: absolute;
+  width: 80%;
+  border-radius: 25px;
+  height: 400px;
+  background: linear-gradient(
+    to right,
+    rgba(40, 40, 40, 0),
+    rgba(28, 28, 28, 0),
+    rgba(40, 40, 40, 1)
+  );
+  pointer-events: none;
+}
+
+.singleArtistSongs {
+  padding: 30px;
+  margin: 30px;
+  width: 90%;
+  font-size: medium;
+  display: flex;
+  flex-wrap: wrap;
+  height: 430px;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+
+.artistSongItem {
+  padding: 10px 40px 10px 0;
+}
+
+.songCoverBig {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+
+.songTitleBig {
+  font-size: 70pt;
+}
+
+.songPublishDateBig {
+  font-weight: 100;
+  font-size: 30pt;
+}
+
+.songLastRelease {
+  font-size: xx-large;
+  padding: 30px 0px 0px 30px;
+}
+
+.singleAlbumTitle {
+  font-size: 50pt;
+}
+
+.albumFromSongLink {
+  color: white;
+}
+
+.albumFromSongLink:hover {
+  color: var(--yellow);
+}
+
+.searchPlusButton {
+  display: flex;
+  align-items: center;
+}
+
+.createButton {
+  margin: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--yellow);
+  border-color: black !important;
+}
+
+.createButton img {
+  color: var(--yellow);
+}
+
+.createButton:hover {
+  background-color: var(--yellow) !important;
+  border: none !important;
+}
+
+.songCreateModal {
+  font-family: "Programme";
+}
+
+.ant-modal .ant-modal-body {
+  background-color: var(--gray) !important;
+}
+
+.songCreationForm {
+  font-family: "Programme";
+  background-color: var(--gray) !important;
+  color: var(--yellow) !important;
+}
+
+.ant-form-item-required,
+.ant-form-item-label,
+.ant-form-item-label > label {
+  font-family: "Programme";
+  color: var(--yellow) !important;
+}
+
+.ant-modal {
+  background-color: var(--gray) !important;
+  color: var(--secondary-color);
+}
+
+.ant-modal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ant-modal-content,
+.ant-picker-panel-layout,
+.ant-select-dropdown {
+  background-color: var(--gray) !important;
+  border: 2px solid var(--yellow) !important;
+}
+
+.ant-modal-footer {
+  background-color: var(--gray);
+  padding: 10px;
+}
+
+.ant-modal .ant-btn,
+.ant-modal .ant-input,
+.ant-select,
+.ant-select-outlined,
+.ant-form-item-control-input .ant-select-dropdown,
+.ant-select-in-form-item,
+.ant-select-selector,
+.ant-select-item,
+.ant-select-item-option,
+.ant-select-item-option-content .ant-select-selection-search,
+.ant-select-selection-item,
+td,
+th,
+.ant-picker-month-btn,
+.ant-picker-year-btn,
+.ant-picker-header-prev-btn,
+.ant-picker-header-next-btn,
+.ant-picker-now-btn,
+.ant-picker-input,
+.ant-picker,
+.ant-picker-panel-layout,
+.ant-picker-body,
+.ant-picker-content,
+.ant-picker-panel,
+.ant-picker-outlined,
+.ant-picker-clear {
+  font-family: "Programme";
+  font-weight: bold !important;
+  background-color: var(--gray) !important;
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+
+.ant-select-item:hover {
+  background-color: var(--yellow) !important;
+  color: var(--gray) !important;
+  border-color: var(--gray) !important;
+}
+
+.ant-btn:hover {
+  background-color: var(--yellow);
+  color: var(--gray);
+  border-color: var(--gray);
+}
+
+.ant-switch {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: var(--light-gray);
+  border-width: 2px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-style: solid;
+
+  min-width: 90px !important;
+  min-height: 45px !important;
+
+  margin-left: -55px;
+}
+
+.ant-switch-checked {
+  background-color: var(--yellow) !important;
+  color: var(--yellow);
+}
+
+.ant-switch-inner {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.ant-switch-handle {
+  color: var(--gray) !important;
+  border-radius: 19px;
+}
+
+.ant-switch .ant-switch-handle::before {
+  border-radius: 19px;
+  margin-top: 3px;
+
+  width: 30px !important;
+  height: 30px !important;
+  inset-inline-start: calc(100% - 15px);
+}
+
+.ant-switch-checked .ant-switch-handle::before {
+  margin-left: -18px !important;
+}
+
+.adminEditPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.saveButton {
+  margin-left: -150px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--yellow);
+  border-color: black !important;
+}
+
+.saveButton:hover {
+  background-color: var(--yellow) !important;
+  transform: scale(1.05);
+}
+
+.ant-modal-title {
+  background-color: var(--gray);
+  color: var(--yellow) !important;
+  font-size: xx-large !important;
+}
+
+.loginForm {
+  margin-top: 100px !important;
+  margin: auto;
+  width: 40%;
+  justify-content: center;
+
+  font-family: "Programme";
+
+}
+
+.loginForm .ant-form-item-label>label{
+  font-size: 32pt;
+  padding: 15px;
+  font-weight: 800;
+
+  
+}
+
+.loginForm .ant-form-item-control-input,
+.loginForm  .ant-form-item-control-input-content
+.loginForm .ant-form-item-control, 
+.loginForm input,
+.loginForm .ant-input-password,
+.loginForm .ant-checkbox,
+.loginForm .ant-checkbox-checked,
+.loginForm .ant-checkbox-input,
+.loginForm .ant-checkbox-wrapper,
+.loginForm .ant-checkbox-wrapper-checked,
+.loginForm .ant-checkbox-wrapper-in-form-item   {
+  font-weight: bold !important;
+  background-color: var(--gray) !important;
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+  font-size: 16pt !important; 
+}
+
+.ant-checkbox-inner {
+  background-color: black !important;
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+
+.anticon {
+  color: var(--yellow) !important;
+}
+
+.loginButton {
+  background-color: var(--gray) !important;
+  border-color: var(--yellow);
+  border-width: 3px;
+  color: var(--yellow);
+  font-size: 32pt;
+  font-weight: 600;
+  width:  200px;
+  height: auto !important;
+}
+
+.loginButton:hover {
+  background-color: var(--yellow) !important;
+  border-color: var(--gray) !important;
+  color: var(--gray) !important;
+}
+
+.accoutnButton {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+  border-width: 2px;
+  padding: 5px;
+  margin: 0px;
+
+
+}
+
+.accoutnButton:hover {
+  transform: scale(1.05);
+  background-color: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+
+.userName {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  font-size: large;
+  justify-content: space-between;
+align-items: center;
+  border-width: 2px;
+  padding-left: 5px;
+}
+
+.userName div {
+  margin-right: 10px;
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.logoutWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+.ant-upload-list-item-name {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+.ant-modal-close-icon {
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
